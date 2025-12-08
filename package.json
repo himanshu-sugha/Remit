@@ -1,0 +1,39 @@
+{
+  "name": "remit-ai",
+  "version": "1.0.0",
+  "description": "Korean Won Remittance AI Agent - IQAI Hackathon Project",
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "server": "tsx src/server.ts",
+    "web": "npx adk web",
+    "run": "npx adk run",
+    "build": "tsc",
+    "test": "tsx src/test.ts"
+  },
+  "keywords": [
+    "ai-agent",
+    "remittance",
+    "krwq",
+    "adk-ts",
+    "iqai",
+    "frax"
+  ],
+  "author": "Himanshu Soni",
+  "license": "MIT",
+  "dependencies": {
+    "@iqai/adk": "latest",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.1"
+  }
+}

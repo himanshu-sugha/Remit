@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REMIT-AI | Korean Won Remittance Agent</title>
+  <meta name="description" content="Send money to Korea instantly with near-zero fees using KRWQ stablecoin. Powered by IQAI's ADK-TS.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">💸</span>
+        <h1>REMIT-AI</h1>
+      </div>
+      <div class="header-right">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
+          <span id="langText">한국어</span>
+        </button>
+        <div class="rate-badge">
+          <span class="rate-label" data-i18n="currentRate">Current Rate:</span>
+          <span class="rate-value" id="currentRate">$1 = ₩1,380</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h2 class="hero-title" data-i18n="heroTitle">
+          Send Money to Korea <span class="highlight">Instantly</span>
+        </h2>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          Near-zero fees • Under 1 minute • Powered by KRWQ
+        </p>
+      </section>
+
+      <!-- Chat Interface -->
+      <section class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <p data-i18n="welcomeMessage">
+                Hi! I'm REMIT-AI, your intelligent Korean Won remittance assistant. 
+                I can help you send money to Korea using KRWQ stablecoin with fees under 1%.
+              </p>
+              <p data-i18n="welcomePrompt">
+                How much would you like to send today?
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-container">
+          <input 
+            type="text" 
+            class="chat-input" 
+            id="chatInput" 
+            data-i18n-placeholder="inputPlaceholder"
+            placeholder="Send $500 to Korea..."
+            onkeypress="handleKeyPress(event)"
+          >
+          <button class="send-button" onclick="sendMessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+
+        <div class="quick-actions">
+          <button class="quick-btn" onclick="sendQuickMessage('What\\'s the current rate?')" data-i18n="quickRate">
+            📊 Check Rate
+          </button>
+          <button class="quick-btn" onclick="sendQuickMessage('Send $500 to Korea')" data-i18n="quickSend">
+            💵 Send $500
+          </button>
+          <button class="quick-btn" onclick="sendQuickMessage('Compare with bank wire')" data-i18n="quickCompare">
+            🏦 Compare
+          </button>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="features">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 data-i18n="feature1Title">Instant Settlement</h3>
+          <p data-i18n="feature1Desc">Under 1 minute vs 2-5 days with banks</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3 data-i18n="feature2Title">Near-Zero Fees</h3>
+          <p data-i18n="feature2Desc">Less than 1% vs 5%+ with traditional transfers</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 data-i18n="feature3Title">Fully Transparent</h3>
+          <p data-i18n="feature3Desc">On-chain, verifiable transactions</p>
+        </div>
+      </section>
+
+      <!-- Sponsors -->
+      <section class="sponsors">
+        <p class="sponsors-label" data-i18n="poweredBy">Powered by</p>
+        <div class="sponsor-logos">
+          <div class="sponsor" title="KRWQ - Korean Won Stablecoin">
+            <span>🇰🇷 KRWQ</span>
+          </div>
+          <div class="sponsor" title="Frax Finance">
+            <span>⚗️ Frax</span>
+          </div>
+          <div class="sponsor" title="IQAI ADK-TS">
+            <span>🧠 IQAI</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Built for <strong>IQAI Agent Arena Hackathon</strong> using ADK-TS
+      </p>
+      <p class="footer-links">
+        <a href="https://github.com/YOUR_REPO" target="_blank">GitHub</a>
+        <a href="https://adk.iqai.com" target="_blank">ADK-TS Docs</a>
+        <a href="https://iqai.com" target="_blank">IQAI ATP</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
